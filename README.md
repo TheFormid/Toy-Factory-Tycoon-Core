@@ -29,7 +29,7 @@ for i, v in pairs(Data.Tycoon) do
     local itemToClone = game.ReplicatedStorage.ToyFactory1.SatinAlincaklar:FindFirstChild(button.AlincakEsya.Value)
     local item = itemToClone:Clone()
     item.Parent = Tft.SatinAlindi
-end
+end```
 
 2. Custom "Magnitude-Based" Interaction Engine
 To optimize performance and bypass the limitations of standard Roblox ProximityPrompts, I engineered a custom interaction handler.
