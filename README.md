@@ -29,7 +29,9 @@ for i, v in pairs(Data.Tycoon) do
     local itemToClone = game.ReplicatedStorage.ToyFactory1.SatinAlincaklar:FindFirstChild(button.AlincakEsya.Value)
     local item = itemToClone:Clone()
     item.Parent = Tft.SatinAlindi
-end```
+end
+
+```
 
 2. Custom "Magnitude-Based" Interaction Engine
 To optimize performance and bypass the limitations of standard Roblox ProximityPrompts, I engineered a custom interaction handler.
@@ -40,6 +42,7 @@ UI culling: Automatically renders/derenders 3D UI elements (BillboardGui) based 
 
 Code Highlight (ProximityOptimizer.lua): Client-side optimization loop for vehicle shops:
 
+```lua
 -- Real-time distance calculation for interaction visibility
 local aralik = (hmr.Position - v.Position).magnitude
 if aralik < 11 then
@@ -55,6 +58,7 @@ else
     v.BillboardGui.ImageButton.Visible = false -- Hide UI for optimization
 end
 
+```
 3. Secure Transaction & Vehicle Logic
 Purchasing logic verifies player funds on the server before authorizing any changes.
 
