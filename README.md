@@ -17,6 +17,7 @@ The entire tycoon progression is managed securely on the server to prevent explo
 
 > **Code Highlight (`DataManager.lua`):**
 > *Logic that reconstructs the player's tycoon from saved data upon login:*
+
 ```lua
 -- Iterating through saved "Tycoon" data to restore purchased buttons and machines
 for i, v in pairs(Data.Tycoon) do
@@ -29,6 +30,7 @@ for i, v in pairs(Data.Tycoon) do
     local item = itemToClone:Clone()
     item.Parent = Tft.SatinAlindi
 end
+
 2. Custom "Magnitude-Based" Interaction Engine
 To optimize performance and bypass the limitations of standard Roblox ProximityPrompts, I engineered a custom interaction handler.
 
@@ -38,8 +40,6 @@ UI culling: Automatically renders/derenders 3D UI elements (BillboardGui) based 
 
 Code Highlight (ProximityOptimizer.lua): Client-side optimization loop for vehicle shops:
 
-Lua
-
 -- Real-time distance calculation for interaction visibility
 local aralik = (hmr.Position - v.Position).magnitude
 if aralik < 11 then
@@ -48,12 +48,13 @@ if aralik < 11 then
     -- Input handling for interaction (E Key)
     UserInputService.InputBegan:Connect(function(KeyPressed)
         if KeyCodePressed == Enum.KeyCode.E then 
-            game.ReplicatedStorage.VehicleRemotes.Cycle:FireServer(...)
+            game.ReplicatedStorage.VehicleRemotes.Cycle:FireServer(v.Fiyat.Value,v.Vehicle.Value,v,aralik,v.renderImage.Value)
         end
     end)
 else
     v.BillboardGui.ImageButton.Visible = false -- Hide UI for optimization
 end
+
 3. Secure Transaction & Vehicle Logic
 Purchasing logic verifies player funds on the server before authorizing any changes.
 
@@ -64,7 +65,7 @@ Dynamic Spawning: Spawns vehicles relative to the player's specific tycoon plot 
 📂 Source Code
 You can explore the core systems in the repository:
 
-DataManager.lua - Save/Load logic and tycoon reconstruction.
+DataManager.lua - Save/load logic and tycoon reconstruction.
 
 Buttons.lua - Core tycoon button mechanics and tween animations.
 
