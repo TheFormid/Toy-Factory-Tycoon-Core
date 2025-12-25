@@ -70,13 +70,13 @@ Purchasing logic verifies player funds on the server before authorizing any chan
 * **Dynamic Spawning:** Spawns vehicles relative to the player's specific tycoon plot (`Island1` vs `Island2`), adjusting CFrames dynamically.
 
 ## 📂 Source Code
-
 You can explore the core systems in the repository:
 
-* [DataManager.lua](https://www.google.com/search?q=DataManager.lua) - Save/load logic and tycoon reconstruction.
-* [Buttons.lua](https://www.google.com/search?q=Buttons.lua) - Core tycoon button mechanics and tween animations.
-* [ProximityOptimizer.lua](https://www.google.com/search?q=ProximityOptimizer.lua) - Custom interaction system.
-* [VehicleTransaction.lua](https://www.google.com/search?q=VehicleTransaction.lua) - Secure server-side purchasing logic.
+- [DataManager.server.lua](DataManager.server.lua) - Save/load logic and tycoon reconstruction.
+- [Buttons.lua](Buttons.lua) - Core tycoon button mechanics and tween animations.
+- [ProximityOptimizer.client.lua](ProximityOptimizer.client.lua) - Custom interaction system (Client-side optimization).
+- [VehicleTransaction.server.lua](VehicleTransaction.server.lua) - Secure server-side purchasing logic.
+- [CustomPrompts.client.lua](CustomPrompts.client.lua) - Custom UI handler for proximity prompts.
 
 ```
 
